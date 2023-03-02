@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/navMediaListFragment">
+
+    <fragment
+        android:id="@+id/navMediaListFragment"
+        android:name="com.example.veganstaskassessment.view.MediaListFragment"
+        android:label="@string/media_list"
+        tools:layout="@layout/fragment_media_list">
+
+        <action
+            android:id="@+id/action_mediaListFragment_to_mediaDetailsFragment"
+            app:destination="@id/navMediaDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navMediaDetailsFragment"
+        android:name="com.example.veganstaskassessment.view.MediaDetailsFragment"
+        android:label="@string/media_details"
+        tools:layout="@layout/fragment_media_details">
+
+        <argument
+            android:name="media"
+            app:argType="com.example.veganstaskassessment.data.models.Content" />
+    </fragment>
+
+</navigation>
